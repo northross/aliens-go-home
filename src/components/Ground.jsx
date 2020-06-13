@@ -1,14 +1,14 @@
-import React from 'react';
-import { skyAndGroundWidth } from '../utils/constants';
+import React from 'react'
+import { skyAndGroundWidth } from '../utils/constants'
 
 const Ground = () => {
   const groundStyle = {
-    fill: '#59a941',
-  };
+    fill: '#59a941'
+  }
   const division = {
     stroke: '#458232',
-    strokeWidth: '3px',
-  };
+    strokeWidth: '3px'
+  }
 
   return (
     <g id="ground">
@@ -21,6 +21,7 @@ const Ground = () => {
         width={skyAndGroundWidth}
         height={100}
       />
+
       <line
         x1={skyAndGroundWidth / -2}
         y1={0}
@@ -29,7 +30,7 @@ const Ground = () => {
         style={division}
       />
     </g>
-  );
-};
+  )
+}
 
-export default Ground;
+export default Ground
