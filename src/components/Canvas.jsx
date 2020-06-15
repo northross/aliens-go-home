@@ -5,6 +5,7 @@ import CannonBase from './CannonBase'
 import CannonPipe from './CannonPipe'
 import CannonBall from './CannonBall'
 import CurrentScore from './CurrentScore'
+import FlyingObject from './FlyingObject'
 import PropTypes from 'prop-types'
 
 const Canvas = (props) => {
@@ -28,6 +29,8 @@ const Canvas = (props) => {
     <CannonBase />
     <CannonBall position={{x: 0, y: -100}}/>
     <CurrentScore score={15} />
+    <FlyingObject position={{x: -150, y: -300}}/>
+    <FlyingObject position={{x: 150, y: -300}}/>
   </svg>
   )
 }
