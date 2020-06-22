@@ -13,9 +13,18 @@ import Login from './Login'
 import { signIn } from 'auth0-web'
 import Leaderboard from './Leaderboard'
 import CannonBall from './CannonBall'
+import Heart from './Heart'
 const Canvas = (props) => {
   const gameHeight = 1200
   const viewBox = [window.innerWidth / -2, 100 - gameHeight, window.innerWidth, gameHeight]
+  const lives = [];
+  for (let i = 0; i < props.gameState.lives; i++) {
+    const heartPosition = {
+      x: -180 - (i * 70),
+      y: 35
+    };
+    lives.push(<Heart key={i} position={heartPosition}/>);
+  }
   // eslint-disable-next-line
   const leaderboard = [
     { id: 'd4', maxScore: 82, name: 'Ado Kukic', picture: 'https://twitter.com/KukicAdo/profile_image', },
@@ -70,6 +79,7 @@ const Canvas = (props) => {
          position={flyingObject.position}
        />
      ))}
+     {lives}
     </svg>
   )
 }
